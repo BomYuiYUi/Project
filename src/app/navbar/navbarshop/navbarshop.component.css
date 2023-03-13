@@ -1,0 +1,12 @@
+.navbar{
+    box-shadow: 0 3px 9px 3px rgba(0,0,0, 0.1);
+}
+.f{
+    font-size: 1.3rem;
+}
+.nav-link:hover{
+    color: red !important;
+}
+.active{
+    color: red !important;
+}
