@@ -2,3 +2,6 @@
     box-shadow: 6px 2px 8px 4px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
+.col-xs-12{
+    text-align: center;
+}

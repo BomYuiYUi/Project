@@ -17,6 +17,4 @@ export class ProductdetailComponent implements OnInit{
   ngOnInit(): void {
     this.dts.getProductOne(this.id).subscribe((data)=>{this.myProduct=data})
   }
-
-
 }

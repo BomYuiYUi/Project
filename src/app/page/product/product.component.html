@@ -1,9 +1,9 @@
 <div class="container my-3">
   <div class="row g-0">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let mdata of myProduct">
-      <a class="btn" routerLink = "/products/{{mdata.bookId}}">
-      <div class="card mx-auto ">
-        <img src="{{mdata.bookImg}}" class="card-img-top" style="height: 320px;" alt="...">
+      <a class="btn" routerLink = "/products/{{mdata.ProID}}">
+      <div class="card mx-auto " style="width: 13rem;">
+        <img src="{{mdata.ProImg}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{mdata.ProName}}</h5>
           <p class="card-text">{{mdata.ProPrice}}</p>

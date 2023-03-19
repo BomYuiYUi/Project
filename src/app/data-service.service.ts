@@ -14,22 +14,20 @@ export class DataServiceService {
 
   getProduct(){
     return this._http.get<{
-      bookId:string;
-      bookName:string;
-      bookImg:string;
-      bookType:string;
-      bookSyn:string;
-      bookPrice:number;
-    }>(this.apiURL+'/books')
+      ProId:string;
+      ProName:string;
+      ProImg:string;
+      ProPrice:string;
+      ProDetail:string;
+    }>(this.apiURL+'/products')
   }
   getProductOne(id:any){
     return this._http.get<{
-      bookId:string;
-      bookName:string;
-      bookImg:string;
-      bookType:string;
-      bookSyn:string;
-      bookPrice:number;
-    }>(this.apiURL+'/books/'+id)
+      ProId:string;
+      ProName:string;
+      ProImg:string;
+      ProPrice:string;
+      ProDetail:string;
+    }>(this.apiURL+'/products/'+id)
   }
 }
