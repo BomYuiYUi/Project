@@ -5,3 +5,10 @@
 .col-xs-12{
     text-align: center;
 }
+.card-img-top{
+    width: 200px;
+    height: 200px;
+}
+.cardtext{
+    font-size: 1rem;
+}
