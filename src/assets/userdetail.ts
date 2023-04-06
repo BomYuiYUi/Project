@@ -1,8 +1,9 @@
 export interface UserResponse {
-    id: number;
     username: string;
     password: string;
     name: string;
-    Lname: string;
+    lastname: string;
+    email: string;
     address: string;
+    tel:string;
   }

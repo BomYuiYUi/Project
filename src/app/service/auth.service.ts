@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginResponse } from 'src/assets/login';
 import { UserResponse } from 'src/assets/userdetail';
 import { Router } from '@angular/router';
@@ -8,13 +8,28 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
   URL = 'http://localhost:3000'
   login(username: string, password: string) {
-    
+
     const body = { username, password };
-  
-    this.http.post<LoginResponse>(this.URL+'/login', body).subscribe(
+
+    this.http.post<LoginResponse>(this.URL + '/login', body).subscribe(
+      (data) => {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/product']);
+      },
+      (error) => {
+        console.log(error);
+        alert(error.error);
+      }
+    );
+  }
+  register(username: string, password: string, name: string, lastname: string, email: string, address: string, tel: string) {
+
+    const body = { username, password, name, lastname, email, address, tel };
+
+    this.http.post<LoginResponse>(this.URL + '/register', body).subscribe(
       (data) => {
         localStorage.setItem('token', data.token);
         this.router.navigate(['/product']);
@@ -32,11 +47,6 @@ export class AuthService {
         'Authorization': `Bearer ${token}`
       })
     };
-    return this.http.get<{id: number;
-      username: string;
-      password: string;
-      name: string;
-      Lname: string;
-      address: string;}>(this.URL+'/auth', httpOptions);
+    return this.http.get<UserResponse>(this.URL + '/auth', httpOptions);
   }
 }
