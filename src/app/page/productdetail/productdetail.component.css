@@ -1,0 +1,18 @@
+.center {
+    text-align: center;
+}
+
+.btn-add-to-cart {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 50px;
+    background-color: #FFC0CB;
+    border: none;
+    margin-top: 3px;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #dba4ad;
+    transition: all 0.2s ease-in-out;
+}

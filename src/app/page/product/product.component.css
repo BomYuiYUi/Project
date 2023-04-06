@@ -2,12 +2,16 @@
     box-shadow: 6px 2px 8px 4px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
+.card{
+    border-radius: 2rem;
+}
 .col-xs-12{
     text-align: center;
 }
 .card-img-top{
     width: 200px;
     height: 200px;
+    border-radius: 2rem;
 }
 .cardtext{
     font-size: 1rem;
