@@ -36,36 +36,38 @@ export class ProductdetailComponent{
     const { qty } = this.addForm.value;
     const newprice = qty * this.myProduct.ProPrice;
 //check token
-    const token = localStorage.getItem('token');
+const token = localStorage.getItem('token');
     if (token) {
-      this.authService.getAuth(token).subscribe(
-        (data)=>{this.myUser=data},
-        (error) => {
-          console.log(error);
-          alert(error.error);
+      this.authService.getAuth(token).subscribe({
+        next:(user)=>{
+         this.myUser = user
+         if (typeof qty !== 'number' || qty <= 0) {
+          alert('Invalid quantity');
+          return;
+        }
+        this.cartService.addProduct(this.myUser.username,this.myProduct.ProID,this.myProduct.ProImg, this.myProduct.ProName,qty,newprice).subscribe({
+          next:(product)=>{
+            console.log('add to carts')
+          },
+          error:(response)=>{
+            console.log(response)
+          },
+          complete:()=>{
+            alert('add to carts')
+          }
+        });
+        },
+        error:(response)=>{
+          alert(response.error);
           localStorage.removeItem('token');
           this.router.navigate(['/login']);
         }
-      );
+      });
     }
     else{
       this.router.navigate(['/login']);
     }
 
-    if (typeof qty !== 'number' || qty <= 0) {
-      alert('Invalid quantity');
-      return;
-    }
-    this.cartService.addProduct(this.myUser.username,this.myProduct.ProID,this.myProduct.ProImg, this.myProduct.ProName,qty,newprice).subscribe({
-      next:(product)=>{
-        console.log('add to carts')
-      },
-      error:(response)=>{
-        console.log(response)
-      },
-      complete:()=>{
-        alert('add to carts')
-      }
-    });
+    
   }
 }
