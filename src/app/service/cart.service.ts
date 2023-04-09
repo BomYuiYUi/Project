@@ -11,8 +11,8 @@ export class CartService {
 
   URL = 'http://localhost:3000';
 
-  addProduct(username: string, ProID: number, ProImg: string, ProName: string, ProQty: number, ProPrice: number) {
-    const body = { username, ProID, ProImg, ProName, ProQty, ProPrice };
+  addProduct(username: string, ProId: number, ProImg: string, ProName: string, ProQty: number, ProPrice: number) {
+    const body = { username, ProId, ProImg, ProName, ProQty, ProPrice };
     return this.http.post<any>(this.URL + '/addCart', body);
   }
 

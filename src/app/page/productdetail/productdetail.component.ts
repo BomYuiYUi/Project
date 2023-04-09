@@ -31,6 +31,11 @@ export class ProductdetailComponent{
     this.addForm = this.formBuilder.group({
       qty: ['']
     });
+  }
+  onSubmit() {
+    const { qty } = this.addForm.value;
+    const newprice = qty * this.myProduct.ProPrice;
+//check token
     const token = localStorage.getItem('token');
     if (token) {
       this.authService.getAuth(token).subscribe(
@@ -46,14 +51,7 @@ export class ProductdetailComponent{
     else{
       this.router.navigate(['/login']);
     }
-  }
-  onSubmit() {
-    console.log("myUser:", this.myUser);
-    console.log("myProduct:", this.myProduct);
-    const { qty } = this.addForm.value;
-    console.log("qty:", qty);
-    const newprice = qty * this.myProduct.ProPrice;
-    console.log("newprice:", newprice);
+
     if (typeof qty !== 'number' || qty <= 0) {
       alert('Invalid quantity');
       return;
@@ -66,7 +64,7 @@ export class ProductdetailComponent{
         console.log(response)
       },
       complete:()=>{
-        alert('dddddddd')
+        alert('add to carts')
       }
     });
   }
