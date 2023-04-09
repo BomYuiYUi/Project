@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { product } from './model/product.model';
 
 const HttpOptions ={
 headers: new HttpHeaders({'Content-Type':'application/json'})
@@ -13,21 +14,9 @@ export class DataServiceService {
   constructor(public _http:HttpClient) {}
 
   getProduct(){
-    return this._http.get<{
-      ProId:string;
-      ProName:string;
-      ProImg:string;
-      ProPrice:string;
-      ProDetail:string;
-    }>(this.apiURL+'/products')
+    return this._http.get<product>(this.apiURL+'/products')
   }
   getProductOne(id:any){
-    return this._http.get<{
-      ProId:string;
-      ProName:string;
-      ProImg:string;
-      ProPrice:string;
-      ProDetail:string;
-    }>(this.apiURL+'/products/'+id)
+    return this._http.get<product>(this.apiURL+'/products/'+id)
   }
 }

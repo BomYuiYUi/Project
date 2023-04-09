@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginResponse } from 'src/assets/login';
-import { UserResponse } from 'src/assets/userdetail';
+import { LoginResponse } from 'src/app/model/login';
+import { userdetail } from 'src/app/model/userdetail';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -47,6 +47,6 @@ export class AuthService {
         'Authorization': `Bearer ${token}`
       })
     };
-    return this.http.get<UserResponse>(this.URL + '/auth', httpOptions);
+    return this.http.get<userdetail>(this.URL + '/auth', httpOptions);
   }
 }
