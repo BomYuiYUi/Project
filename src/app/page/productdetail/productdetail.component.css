@@ -16,3 +16,10 @@
     background-color: #dba4ad;
     transition: all 0.2s ease-in-out;
 }
+img{
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: #FFC0CB;
+    box-shadow: 6px 2px 8px 4px rgba(0, 0, 0, 0.1);
+}
