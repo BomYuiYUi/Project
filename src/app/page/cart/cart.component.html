@@ -1,1 +1,36 @@
-<p>cart works!</p>
+<div class="container my-3">
+    <div class="row">
+    <div class="col-xl-8">
+        <p style="font-size: 1.6rem; text-align: center;">Carts List</p>
+        <table class="justify-content-center">
+            <thead>
+                <tr style="text-align: center;">
+                    <th>IMG</th>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>SUBTOTAL</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let mdata of myCart; let i=index">
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            <img style="width: 100px;" src="{{mdata.ProImg}}" alt="">
+                        </div>
+                    </td>
+                    <td class="align-middle">{{mdata.ProName}}</td>
+                    <td class="align-middle">{{mdata.ProPrice/mdata.ProQty}}</td>
+                    <td class="align-middle" style="text-align: center;">{{mdata.ProQty}}</td>
+                    <td class="align-middle" style="text-align: center;">{{mdata.ProPrice}}</td>
+                    <td class="align-middle" style="text-align: center;"><button class="btn btn-sm btn-danger" (click)="delete(mdata.CartId, i)"><i class="bi bi-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-xl-4">
+        asdasdadsadasd
+    </div>
+</div>
+</div>
