@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartResponse } from '../model/carts';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,11 @@ export class CartService {
     return this.http.post<any>(this.URL + '/addCart', body);
   }
 
-  getCarts(username: string) {
+  getCarts(username: string){
     const body = { username: username };
-    return this.http.post<CartResponse>(this.URL + '/Cart', body);
+    return this.http.post<CartResponse[]>(this.URL + '/carts', body);
+  }
+  DelOneProduct(CartId:any){
+    return this.http.delete<any>(this.URL+'/carts/'+CartId)
   }
 }
