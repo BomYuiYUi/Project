@@ -13,7 +13,8 @@ import { CartResponse } from 'src/app/model/carts';
 export class CartComponent {
   myCart: CartResponse[];
   myUser: userdetail;
-  sum: number = 0
+  sum: number = 0;
+  items:number = 0;
   
   constructor(
     private cartServive:CartService,
@@ -31,6 +32,14 @@ export class CartComponent {
           next:(data)=>{
             this.myCart = data;
             console.log(this.myCart)
+            this.items = this.myCart.length
+            console.log(this.items)
+            this.sum = this.myCart.map(x => x.ProPrice).reduce((a,b) => a+ b);
+            console.log(this.sum);
+          },
+          error:(res)=>{
+            console.log(res)
+            alert(res.error.message);
           }
          });
   
@@ -50,7 +59,7 @@ export class CartComponent {
 
   delete(CartId:any, i:any) {
     console.log(CartId);
-    if(window.confirm('Do you want to go ahead?')) {
+    if(window.confirm('Do you want to Delete?')) {
     this.cartServive.DelOneProduct(CartId).subscribe({
       next:(proce)=>{
         console.log(proce)
@@ -60,6 +69,11 @@ export class CartComponent {
         console.log(response)
       },
       complete:()=>{
+        this.items = this.myCart.length
+        if(this.items ===0){
+          location.reload();
+        }
+        console.log(this.items)
         this.sum = this.myCart.map(x => x.ProPrice).reduce((a,b) => a+ b);
         console.log(this.sum);
       }
