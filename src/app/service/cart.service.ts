@@ -24,4 +24,13 @@ export class CartService {
   DelOneProduct(CartId:any){
     return this.http.delete<any>(this.URL+'/carts/'+CartId)
   }
+
+  addOrder(username: string,OrderPrice: number,OrderTax: number,OrderShip: number,OrderTotal: number,OrderAddress: string){
+    const body = { username,OrderPrice,OrderTax,OrderShip,OrderTotal,OrderAddress };
+    return this.http.post<any>(this.URL+'/order',body);
+  }
+  addOrderdetail(OrderId: number,ProId: number,ProImg: string,ProName: string,ProQty: number,ProPrice: number){
+    const body = { OrderId,ProId,ProImg,ProName,ProQty,ProPrice };
+    return this.http.post<any>(this.URL+'/orderdetail',body);
+  }
 }
