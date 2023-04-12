@@ -1,7 +1,7 @@
 export interface CartResponse {
     CartId : number;
     username: string;
-    ProId: number;
+    ProID: number;
     ProImg: string;
     ProName: string;
     ProQty: number;
