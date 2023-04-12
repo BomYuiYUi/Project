@@ -58,7 +58,7 @@ const token = localStorage.getItem('token');
         });
         },
         error:(response)=>{
-          alert(response.error);
+          alert(response.error.message);
           localStorage.removeItem('token');
           this.router.navigate(['/login']);
         }
