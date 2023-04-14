@@ -1,0 +1,10 @@
+a{
+    color: #B9B8B8;
+}
+.nav-link:hover{
+
+    color: black!important;
+}
+.active{
+    color: black!important;
+}

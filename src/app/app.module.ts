@@ -17,6 +17,9 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { ProductdetailComponent } from './page/productdetail/productdetail.component';
 import { ProfileComponent } from './page/profile/profile.component';
 import { RegisterComponent } from './page/register/register.component';
+import { SubuserComponent } from './layout/subuser/subuser.component';
+import { NavbarsubuserComponent } from './navbar/navbarsubuser/navbarsubuser.component';
+import { OrderComponent } from './page/order/order.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { RegisterComponent } from './page/register/register.component';
     FooterComponent,
     ProductdetailComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    SubuserComponent,
+    NavbarsubuserComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

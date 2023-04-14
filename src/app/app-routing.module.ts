@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer/footer.component';
 import { ProductdetailComponent } from './page/productdetail/productdetail.component';
 import { ProfileComponent } from './page/profile/profile.component';
 import { RegisterComponent } from './page/register/register.component';
+import { SubuserComponent } from './layout/subuser/subuser.component';
+import { OrderComponent } from './page/order/order.component';
 
 const routes: Routes = [
   {
@@ -35,12 +37,20 @@ const routes: Routes = [
       component:ProductdetailComponent
     },
     {
-      path:'profile',
-      component:ProfileComponent
-    },
-    {
       path:'register',
       component:RegisterComponent
+    },
+    {
+      path:'myuser',
+      component:SubuserComponent,
+      children:[{
+        path:'',
+        component:ProfileComponent
+      },
+      {
+        path:'order',
+        component:OrderComponent
+      }]
     }]
   }
 ];

@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
         (data)=>{this.myUser=data},
         (error) => {
           console.log(error);
-          alert(error.error);
+          alert(error.error.message);
           localStorage.removeItem('token');
           this.router.navigate(['/login']);
         }

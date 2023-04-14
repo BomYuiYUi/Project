@@ -1,6 +1,34 @@
-<div>{{myUser.username}}</div>
-<div>{{myUser.password}}</div>
-<div>{{myUser.name}}</div>
-<div>{{myUser.lastname}}</div>
-<div>{{myUser.address}}</div>
-<button class="btn btn-danger" (click)="logout()">Logout</button>
+<div class="container">
+    <div class="box py-3 px-5" style="width: 660px;">
+        <div class="d-flex mt-2">
+            <p>Username : </p>
+            <div class="ms-5">
+                {{myUser.username}}
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <p>Name : </p>
+            <div class="ms-5">
+                {{myUser.name}}
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <p>LastName : </p>
+            <div class="ms-5">
+                <div>{{myUser.lastname}}</div>
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <p>Address : </p>
+            <div class="ms-5">
+                <div>{{myUser.address}}</div>
+            </div>
+        </div>
+        <button class="btn btn-primary"  routerLink ="/product">Edit Proflie</button>
+    </div>
+    <div class="d-flex justify-content-end" style="width: 660px;">
+        <button class="btn btn-danger me-5 mt-2" (click)="logout()">Logout</button>
+    </div>
+</div>
+<div>
+</div>
