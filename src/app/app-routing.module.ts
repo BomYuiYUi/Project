@@ -11,6 +11,7 @@ import { ProfileComponent } from './page/profile/profile.component';
 import { RegisterComponent } from './page/register/register.component';
 import { SubuserComponent } from './layout/subuser/subuser.component';
 import { OrderComponent } from './page/order/order.component';
+import { OrderdetailComponent } from './page/orderdetail/orderdetail.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path:'order',
         component:OrderComponent
+      },
+      {
+        path:'orders/:id',
+        component:OrderdetailComponent
       }]
     }]
   }

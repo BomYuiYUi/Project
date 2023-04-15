@@ -20,6 +20,7 @@ import { RegisterComponent } from './page/register/register.component';
 import { SubuserComponent } from './layout/subuser/subuser.component';
 import { NavbarsubuserComponent } from './navbar/navbarsubuser/navbarsubuser.component';
 import { OrderComponent } from './page/order/order.component';
+import { OrderdetailComponent } from './page/orderdetail/orderdetail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OrderComponent } from './page/order/order.component';
     RegisterComponent,
     SubuserComponent,
     NavbarsubuserComponent,
-    OrderComponent
+    OrderComponent,
+    OrderdetailComponent
   ],
   imports: [
     BrowserModule,

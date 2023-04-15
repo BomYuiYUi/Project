@@ -23,9 +23,9 @@
                             </div>
                         </td>
                         <td class="align-middle">{{mdata.ProName}}</td>
-                        <td class="align-middle">{{mdata.ProPrice/mdata.ProQty}}</td>
+                        <td class="align-middle">{{mdata.ProPrice/mdata.ProQty | currency}}</td>
                         <td class="align-middle" style="text-align: center;">{{mdata.ProQty}}</td>
-                        <td class="align-middle" style="text-align: center;">{{mdata.ProPrice}}</td>
+                        <td class="align-middle" style="text-align: center;">{{mdata.ProPrice | currency}}</td>
                         <td class="align-middle" style="text-align: center;"><button class="btn btn-sm btn-danger"
                                 (click)="delete(mdata.CartId, i)"><i class="bi bi-trash"></i></button></td>
                     </tr>
