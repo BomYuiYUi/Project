@@ -1,0 +1,70 @@
+<div class="container">
+    <h5 class="ms-5">OrderID : #{{id}}</h5>
+    <h6 class="ms-5">รายละเอียดสินค้า</h6>
+<table class="justify-content-center mb-5">
+    <thead>
+        <tr style="text-align: center;">
+            <th>IMG</th>
+            <th>Name</th>
+            <th>QTY</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mdata of myOrderDetail; let i=index">
+            <td class="align-middle">
+                <div class="d-flex justify-content-center">
+                    <img style="width: 100px;" src="{{mdata.ProImg}}" alt="">
+                </div>
+            </td>
+            <td class="align-middle">{{mdata.ProName}}</td>
+            <td class="align-middle">{{mdata.ProQty}}</td>
+            <td class="align-middle">{{mdata.ProPrice | currency}}</td>
+            
+        </tr>
+        <tr style="border: none;">
+            <td></td>
+            <td></td>
+            <td>รวม</td>
+            <td>{{myOrder.OrderPrice| currency}}</td>
+            <td></td>
+        </tr>
+        <tr style="border: none;">
+            <td></td>
+            <td></td>
+            <td>ภาษี</td>
+            <td>{{myOrder.OrderTax| currency}}</td>
+            <td></td>
+        </tr>
+        <tr style="border: none;">
+            <td></td>
+            <td></td>
+            <td>ค่าส่ง</td>
+            <td>{{myOrder.OrderShip| currency}}</td>
+            <td></td>
+        </tr>
+        <tr style="border: none;">
+            <td></td>
+            <td></td>
+            <td>ราคาทั้งหมด</td>
+            <td>{{myOrder.OrderTotal| currency}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <ul class="list-group mb-3">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-dark">Delivery Address</span>
+        </h4>
+        <li class="list-group-item d-flex justify-content-between lh-sm" style="width: 400px;">
+            <div>
+                <h6 class="my-0">ที่อยู่</h6>
+                <small class="text-break">{{ myOrder.OrderAddress }}</small>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
+
