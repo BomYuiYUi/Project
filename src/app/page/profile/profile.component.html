@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-3">
     <div class="box py-3 px-5" style="width: 660px;">
         <div class="d-flex mt-2">
             <p>Username : </p>
@@ -24,7 +24,10 @@
                 <div>{{myUser.address}}</div>
             </div>
         </div>
-        <button class="btn btn-primary"  routerLink ="/product">Edit Proflie</button>
+        <div class="d-flex">
+            <button class="btn btn-primary" routerLink="/product">Edit Proflie</button>
+            <button class="btn btn-primary ms-5" routerLink="/product">Edit Password</button>
+        </div>
     </div>
     <div class="d-flex justify-content-end" style="width: 660px;">
         <button class="btn btn-danger me-5 mt-2" (click)="logout()">Logout</button>

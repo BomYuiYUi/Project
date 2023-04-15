@@ -21,6 +21,8 @@ import { SubuserComponent } from './layout/subuser/subuser.component';
 import { NavbarsubuserComponent } from './navbar/navbarsubuser/navbarsubuser.component';
 import { OrderComponent } from './page/order/order.component';
 import { OrderdetailComponent } from './page/orderdetail/orderdetail.component';
+import { EditprofileComponent } from './page/editprofile/editprofile.component';
+import { EditpasswordComponent } from './page/editpassword/editpassword.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { OrderdetailComponent } from './page/orderdetail/orderdetail.component';
     SubuserComponent,
     NavbarsubuserComponent,
     OrderComponent,
-    OrderdetailComponent
+    OrderdetailComponent,
+    EditprofileComponent,
+    EditpasswordComponent
   ],
   imports: [
     BrowserModule,
