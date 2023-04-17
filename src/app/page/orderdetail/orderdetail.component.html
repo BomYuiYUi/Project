@@ -20,35 +20,35 @@
             </td>
             <td class="align-middle">{{mdata.ProName}}</td>
             <td class="align-middle">{{mdata.ProQty}}</td>
-            <td class="align-middle">{{mdata.ProPrice | currency}}</td>
+            <td class="align-middle">{{mdata.ProPrice | currency:"฿":"symbol"}}</td>
             
         </tr>
         <tr style="border: none;">
             <td></td>
             <td></td>
             <td>รวม</td>
-            <td>{{myOrder.OrderPrice| currency}}</td>
+            <td>{{myOrder.OrderPrice| currency:"฿":"symbol"}}</td>
             <td></td>
         </tr>
         <tr style="border: none;">
             <td></td>
             <td></td>
             <td>ภาษี</td>
-            <td>{{myOrder.OrderTax| currency}}</td>
+            <td>{{myOrder.OrderTax| currency:"฿":"symbol"}}</td>
             <td></td>
         </tr>
         <tr style="border: none;">
             <td></td>
             <td></td>
             <td>ค่าส่ง</td>
-            <td>{{myOrder.OrderShip| currency}}</td>
+            <td>{{myOrder.OrderShip| currency:"฿":"symbol"}}</td>
             <td></td>
         </tr>
         <tr style="border: none;">
             <td></td>
             <td></td>
             <td>ราคาทั้งหมด</td>
-            <td>{{myOrder.OrderTotal| currency}}</td>
+            <td>{{myOrder.OrderTotal| currency:"฿":"symbol"}}</td>
             <td></td>
         </tr>
     </tbody>

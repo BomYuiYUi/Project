@@ -23,9 +23,9 @@
                             </div>
                         </td>
                         <td class="align-middle">{{mdata.ProName}}</td>
-                        <td class="align-middle">{{mdata.ProPrice/mdata.ProQty | currency}}</td>
+                        <td class="align-middle">{{mdata.ProPrice/mdata.ProQty | currency:"฿":"symbol"}}</td>
                         <td class="align-middle" style="text-align: center;">{{mdata.ProQty}}</td>
-                        <td class="align-middle" style="text-align: center;">{{mdata.ProPrice | currency}}</td>
+                        <td class="align-middle" style="text-align: center;">{{mdata.ProPrice | currency:"฿":"symbol"}}</td>
                         <td class="align-middle" style="text-align: center;"><button class="btn btn-sm btn-danger"
                                 (click)="delete(mdata.CartId, i)"><i class="bi bi-trash"></i></button></td>
                     </tr>
@@ -50,25 +50,25 @@
                         <h6 class="my-0">Price</h6>
                         <small class="text-body-secondary">ราคาสินค้าทั้งหมด</small>
                     </div>
-                    <span class="text-body-secondary">{{ sum | currency }}</span>
+                    <span class="text-body-secondary">{{ sum | currency:"฿":"symbol" }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                     <div>
                         <h6 class="my-0">Tax</h6>
                         <small class="text-body-secondary">ภาษี 7 %</small>
                     </div>
-                    <span class="text-body-secondary">{{ sum*0.07 | currency }}</span>
+                    <span class="text-body-secondary">{{ sum*0.07 | currency:"฿":"symbol" }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                     <div>
                         <h6 class="my-0">Shipping</h6>
                         <small class="text-body-secondary">ค่าส่งคิดต่อชิ้นละ 50 บาท</small>
                     </div>
-                    <span class="text-body-secondary">{{ items*50 | currency }}</span>
+                    <span class="text-body-secondary">{{ items*50 | currency:"฿":"symbol" }}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (THB)</span>
-                    <strong>{{ (sum*1.07)+(items*50) | currency }}</strong>
+                    <strong>{{ (sum*1.07)+(items*50) | currency:"฿":"symbol" }}</strong>
                 </li>
             </ul>
             <ul class="list-group mb-3">
