@@ -10,7 +10,7 @@ import { OrderResponse } from 'src/app/model/order';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent {
-  myOrder: any=[];
+  myOrder: OrderResponse[];
   myUser: userdetail;
   constructor(
     private authService: AuthService,
@@ -26,6 +26,7 @@ export class OrderComponent {
           this.orderService.getOrderUser(this.myUser.username).subscribe({
             next:(data)=>{
               this.myOrder = data;
+              console.log(this.myOrder)
             },
             error:(res)=>{
               console.log(res)

@@ -12,6 +12,8 @@ import { RegisterComponent } from './page/register/register.component';
 import { SubuserComponent } from './layout/subuser/subuser.component';
 import { OrderComponent } from './page/order/order.component';
 import { OrderdetailComponent } from './page/orderdetail/orderdetail.component';
+import { EditprofileComponent } from './page/editprofile/editprofile.component';
+import { EditpasswordComponent } from './page/editpassword/editpassword.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,14 @@ const routes: Routes = [
       {
         path:'orders/:id',
         component:OrderdetailComponent
+      },
+      {
+        path:'editprofile',
+        component:EditprofileComponent
+      },
+      {
+        path:'editpassword',
+        component:EditpasswordComponent
       }]
     }]
   }
