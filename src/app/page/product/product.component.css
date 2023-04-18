@@ -4,6 +4,7 @@
 }
 .card{
     border-radius: 2rem;
+    height: 290px;
 }
 .col-xs-12{
     text-align: center;

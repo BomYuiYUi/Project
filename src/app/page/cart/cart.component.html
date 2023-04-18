@@ -26,7 +26,7 @@
                         <td class="align-middle">{{mdata.ProPrice/mdata.ProQty | currency:"฿":"symbol"}}</td>
                         <td class="align-middle" style="text-align: center;">{{mdata.ProQty}}</td>
                         <td class="align-middle" style="text-align: center;">{{mdata.ProPrice | currency:"฿":"symbol"}}</td>
-                        <td class="align-middle" style="text-align: center;"><button class="btn btn-sm btn-danger"
+                        <td class="align-middle" style="text-align: center;"><button class="btn btn-sm btn-dark"
                                 (click)="delete(mdata.CartId, i)"><i class="bi bi-trash"></i></button></td>
                     </tr>
                     <tr>
@@ -83,7 +83,7 @@
                 </li>
             </ul>
             <div class="d-flex justify-content-end">
-                <div class="mt-auto p-0"><button class="btn btn-primary" (click)="checkout()">Check Out</button></div>
+                <div class="mt-auto p-0"><button class="btn btn-outline-dark" (click)="checkout()">Check Out</button></div>
             </div>
         </div>
     </div>
