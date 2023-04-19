@@ -38,12 +38,12 @@ export class EditpasswordComponent {
     this.userService.editpassword(this.myUser.username,password,newpassword).subscribe({
       next:(res)=>{
         console.log(res)
+        alert('successfully')
       },
       error:(err)=>{
         console.log(err)
+        alert(err.error)
       }
     });
-    console.log(name)
-    alert('successfully')
   }
 }
